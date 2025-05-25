@@ -6,11 +6,10 @@ packer {
     }
   }
 }
-####veera
 
 variable "aws_region" {
   type    = string
-  default = "us-east-1"
+  default = "us-east-2"
 }
 
 source "amazon-ebs" "ubuntu-node" {
@@ -21,7 +20,7 @@ source "amazon-ebs" "ubuntu-node" {
 
   source_ami_filter {
     filters = {
-      name                = "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"
+      name                = "amazon/ubuntu-pro-server/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-pro-server-*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
